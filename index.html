@@ -1,18 +1,87 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Index</title>
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            background-color: #ccc;
+        }
+    </style>
 </head>
 <body>
-	<!-- add a title, subtitle and paragraph -->
-	<h1>Under Development</h1>
-	<h2>But in the mean time...</h2>
-	<p>"You met me at a very strange time in my life."</p>
+    <div class="container">
+        <h1>About Me</h1>
+        <div class="section">
+            <img src="/api/placeholder/200/200" alt="Profile Picture" class="profile-pic">
+            <h2>Sebastian Guimaraens</h2>
+            <p>When it comes to computing, I revel in security. I am fond of programming backend services, designing secure system architectures, as well as Blue Teaming. I find purpose in combating cybercrime, a deep conviction to contribute to a safer digital realm. A keyboard and an internet connection is all I need to make a difference. Additionally I am on team waffles, we deserve better than pancakes.</p>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li>Languages: Go, Java, C++, Python, SQL</li>
+                <li>Tools/Software: Git, Docker, Grafana, Linux (Kali, Ubuntu Server Edition), VS Code</li>
+                <li>Databases: PostgreSQL, Redis, Prometheus, MySQL</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Hobbies</h2>
+            <p>When I'm not coding, you can find me:</p>
+            <ul>
+                <li>Writing stories and small screenplays</li>
+                <li>Playing fighting games</li>
+                <li>Gawking over films</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me at: sebguim2002@gmail.com</p>
+        </div>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                $(".section").each(function() {
+                    if ($(window).scrollTop() + $(window).height() > $(this).offset().top + 100) {
+                        $(this).addClass("visible");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
