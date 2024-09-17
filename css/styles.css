@@ -1,0 +1,70 @@
+/* Set default styles for body */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fira Sans', sans-serif;
+    overflow: hidden;
+    background: #000;
+    color: #000; /* Set text color to black */
+}
+
+#backgroundCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.summary {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+a {
+    color: #0073b1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
